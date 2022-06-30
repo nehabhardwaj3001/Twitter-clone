@@ -5,7 +5,7 @@ const SideBar = () => {
 	return (
 		<div className='sidebar'>
 			<ul>
-				<li> <a href='/sideBar'> <FaTwitter className='icons logo' /> </a> </li>
+				<li> <a href='/sideBar'> <FaTwitter className='icons logo twi' /> </a> </li>
 				<li> <a href='/sideBar'> <FaHome className='icons logo' /> Home </a> </li>
 				<li> <a href='/sideBar'> <FaHashtag className='icons' /> Explore </a> </li>
 				<li> <a href='/sideBar'> <FaRegBell className='icons' /> Notifications </a> </li>
