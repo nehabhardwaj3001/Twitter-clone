@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaRegImage, FaRegListAlt, FaRegSmile, FaRegCalendarCheck } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { addTweets } from '../redux/actions/PostAction';
 
 const CreateTweet = () => {
+
+	const dispatch = useDispatch();
+	const [tweet, setTweet] = useState([]);
+
 	return (
 		<div className='create'>
 			<div className='create-first'>
@@ -13,6 +19,7 @@ const CreateTweet = () => {
 						type="text"
 						className='create-control'
 						placeholder="What's Happening?"
+						onChange={(e) => setTweet(e.target.value)}
 					/>
 				</div>
 			</div>
@@ -24,7 +31,7 @@ const CreateTweet = () => {
 					<FaRegCalendarCheck className='icon' />
 				</div>
 				<div className='create-btn'>
-					<a href=''>Tweet</a>
+					<button onClick={() => dispatch(addTweets(tweet))}>Tweet</button>
 				</div>
 			</div>
 		</div>

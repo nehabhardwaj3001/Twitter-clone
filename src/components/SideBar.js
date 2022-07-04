@@ -1,5 +1,15 @@
 import React from 'react';
-import { FaTwitter, FaHome, FaHashtag, FaRegBell, FaRegEnvelope, FaRegBookmark, FaClipboardList, FaUserAlt, FaMehBlank } from 'react-icons/fa';
+import './styles/SideBar.css';
+import { FaTwitter,
+		 FaHome,
+		 FaHashtag,
+		 FaRegBell, 
+		 FaRegEnvelope, 
+		 FaRegBookmark, 
+		 FaClipboardList, 
+		 FaUserAlt, 
+		 FaMehBlank 
+		} from 'react-icons/fa';
 
 const SideBar = () => {
 	return (
@@ -12,7 +22,7 @@ const SideBar = () => {
 				<li> <a href='/sideBar'> <FaRegEnvelope className='icons' /> Messages </a> </li>
 				<li> <a href='/sideBar'> <FaRegBookmark className='icons' /> Bookmarks </a> </li>
 				<li> <a href='/sideBar'> <FaClipboardList className='icons' /> Lists </a> </li>
-				<li> <a href='/sideBar'> <FaUserAlt className='icons' /> Profile </a> </li>
+				<li> <a href='/profile'> <FaUserAlt className='icons' /> Profile </a> </li>
 				<li> <a href='/sideBar'> <FaMehBlank className='icons' /> More </a> </li>
 				<div className='sidebar-btn'>
 					<a href=''> Tweet </a>

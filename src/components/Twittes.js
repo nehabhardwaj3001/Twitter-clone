@@ -12,8 +12,8 @@ const Twittes = () => {
 			<Posts 
 				name="Neha Sharma" 	
 				username="@sharmaneha"
-				msg = "#RanbirKapoor being the king of hearts indeed! ❣️🌟"
-				image='https://pbs.twimg.com/media/FWe7QgMagAEaXTU?format=jpg&name=small'
+				msg = "This #DoctorsDay, I salute the dedication, grit and tenacity of doctors across India."
+				image='https://pbs.twimg.com/media/FWjmn7AaMAA7YN8?format=jpg&name=small'
 				comment="4656"
 				retweet="15"
 				heart="20K"
@@ -34,8 +34,8 @@ const Twittes = () => {
 			<Posts 
 				name="Kunal Kusagrah" 
 				username="@kusagrahkunal"
-				msg="This #DoctorsDay, I salute the dedication, grit and tenacity of doctors across India."
-				image='https://pbs.twimg.com/media/FWjmn7AaMAA7YN8?format=jpg&name=small'
+				msg="#RanbirKapoor being the king of hearts indeed! ❣️🌟"
+				image='https://pbs.twimg.com/media/FWe7QgMagAEaXTU?format=jpg&name=small'
 				comment="4532"
 				retweet="8"
 				heart="23435"
