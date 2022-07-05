@@ -4,3 +4,10 @@ export const addTweets = (data) => {
         data,
     }
 }
+
+export const dltTweet = (data) => {
+    return {
+        type : 'DLT_TWEET',
+        data,
+    }
+}

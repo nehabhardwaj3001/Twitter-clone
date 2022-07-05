@@ -24,6 +24,9 @@
   .sidebar ul li a:hover {
     background: #e8f5fe;
     color: #1da1f2;
+    border-radius: 30px;
+    width: 200px;
+    transition: color 100ms ease-out;
   }
   
   .icons {

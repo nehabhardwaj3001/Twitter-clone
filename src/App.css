@@ -118,6 +118,14 @@ body {
   margin-left: 20px;
 }
 
+.createTweet_imageInput{
+  border: none;
+  padding: 10px;
+  width: 60%;
+  margin-left: 20px;
+  outline: none;
+}
+
 .create-control {
   border: none;
   outline: none;
@@ -171,6 +179,11 @@ body {
   height: 50px;
   outline: none;
   border-radius: 50%;
+}
+
+.dlt-icon {
+  margin-left: 28%;
+  font-size: 22px;
 }
 
 .posts-first-img img {

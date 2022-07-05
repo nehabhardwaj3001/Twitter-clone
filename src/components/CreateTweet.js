@@ -6,7 +6,13 @@ import { addTweets } from '../redux/actions/PostAction';
 const CreateTweet = () => {
 
 	const dispatch = useDispatch();
-	const [tweet, setTweet] = useState([]);
+	const [tweet, setTweet] = useState({msg : " " ,image : "" });
+
+	const handleChange = (e) => {setTweet({...tweet, [e.target.name]:e.target.value})}
+	const handleFileChange = (e) => {setTweet({...tweet, [e.target.name]:e.target.value})}
+	const handleClick = () => {
+		dispatch(addTweets(tweet))
+	}
 
 	return (
 		<div className='create'>
@@ -17,21 +23,30 @@ const CreateTweet = () => {
 				<div className='create-input'>
 					<input 
 						type="text"
+						name='tweet'
 						className='create-control'
 						placeholder="What's Happening?"
-						onChange={(e) => setTweet(e.target.value)}
+						onChange={handleChange}
 					/>
 				</div>
 			</div>
+			<input
+				name='tweetImage'
+				className='createTweet_imageInput'
+				placeholder='Optional: Enter Image URL'
+				// type="file" 
+				// value='tweetImage'
+				onChange={handleFileChange}
+			/>
 			<div className='create-second'>
 				<div className='create-icons'>
-					<FaRegImage className='icon' />
+					<FaRegImage className='icon' /> 
 					<FaRegListAlt className='icon' />
 					<FaRegSmile className='icon' />
 					<FaRegCalendarCheck className='icon' />
 				</div>
 				<div className='create-btn'>
-					<button onClick={() => dispatch(addTweets(tweet))}>Tweet</button>
+					<button onClick={handleClick}>Tweet</button>
 				</div>
 			</div>
 		</div>

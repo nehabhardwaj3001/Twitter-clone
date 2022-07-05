@@ -1,16 +1,13 @@
-import { addTweets, ADD_TWEETS } from "../actions/PostAction";
-
 const initialState = { post: [] }
 
 const PostReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_TWEETS":
-            console.log(action)
-            return { ...state, post: action.data };
+            return { ...state, post: [...state.post, action.data] };
+        case "DLT_TWEET" :
+            return {...state, post: state.post.filter(item => item !== action.data)}
         default:
-            return {
-                state
-            };
+            return state
     };
 }
 
