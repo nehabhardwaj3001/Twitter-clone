@@ -2,16 +2,24 @@ import React from 'react';
 import CreateTweet from './CreateTweet';
 import Posts from './Posts';
 import { useSelector } from 'react-redux';
+import CreateTweetModal from './CreateTweetModal';
 
 const Twittes = () => {
 
 	const posts = useSelector(state => state.rootReducer.PostReducer.post);
-	console.log("twittes", posts)
+	const comment = useSelector(state => state.rootReducer.PostReducer.openComments)
+	console.log("twittes", comment)
 	return (
 		<div className='posts'>
 			<div className='posts-home'>
 				Home
 			</div>
+			{comment 
+				? 
+					<div>edsgfrh</div> 
+				: 
+					<div>shfih</div>
+			}
 			<CreateTweet />
 			{[...posts].reverse().map((item) => (
 				<Posts
@@ -26,18 +34,8 @@ const Twittes = () => {
 					share="14.1K"
 				/>
 			))}
-			{/* <Posts
-				name="Neha Sharma"
-				username="@sharmaneha"
-				msg="This #DoctorsDay, I salute the dedication, grit and tenacity of doctors across India."
-				image='https://pbs.twimg.com/media/FWjmn7AaMAA7YN8?format=jpg&name=small'
-				comment="4656"
-				retweet="15"
-				heart="20K"
-				share="14.1K"
-			/> */}
-
-			{/* <Posts
+		
+			<Posts
 				name="Karishma Sharma"
 				username="@karishmasharma"
 				msg="Foster scientific thinking with new idea-starters for projects that you can try with your students. Visit the Apple Teacher Learning Center to get inspired by lesson ideas created by teachers like you."
@@ -79,7 +77,7 @@ const Twittes = () => {
 				retweet="2"
 				heart="21K"
 				share="23"
-			/> */}
+			/>
 
 		</div>
 	)

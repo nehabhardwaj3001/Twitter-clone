@@ -11,3 +11,21 @@ export const dltTweet = (data) => {
         data,
     }
 }
+
+export const showModal = () => {
+    return {
+        type : "SHOW_MODAL",
+    }
+}
+
+export const closeModal = () => {
+    return {
+        type : "CLOSE_MODAL",
+    }
+}
+
+export const openComments = () => {
+    return {
+        type: "OPEN_COMMENTS"
+    }
+}

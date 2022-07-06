@@ -2,7 +2,7 @@ import React from 'react';
 import { FaRegCheckCircle, FaComment, FaRetweet, FaHeart, FaShare } from 'react-icons/fa';
 import { MdDeleteForever } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { dltTweet } from '../redux/actions/PostAction';
+import { dltTweet, openComments } from '../redux/actions/PostAction';
 
 const Posts = ({ item, name, username, msg, image, comment, retweet, heart, share}) => {
 	const  dispatch = useDispatch() ;
@@ -17,7 +17,7 @@ console.log("item",msg.tweet)
 					<strong>{name}</strong> <FaRegCheckCircle className='verify' />
 				</div>
 				<div className='posts-first-username'>{username}<span>. 6h</span> </div>
-				<div className='dlt-icon'><MdDeleteForever onClick={() => dispatch(dltTweet(msg))} /></div>
+				<div className='dlt-icon'><MdDeleteForever onClick={() => dispatch(dltTweet(item))} /></div>
 			</div>
 			<div className='post-details'>
 				<div className='post-details-msg'>
@@ -31,7 +31,7 @@ console.log("item",msg.tweet)
 					</div>
 				</div>
 				<div className='reaction'>
-					<span><FaComment className="comment" /> {comment} </span>
+					<span><FaComment className="comment" onClick={() => dispatch(openComments())} /> {comment} </span>
 					<span><FaRetweet className="comment" /> {retweet} </span>
 					<span><FaHeart className="comment" /> {heart} </span>
 					<span><FaShare className="comment" /> {share} </span>

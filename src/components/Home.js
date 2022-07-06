@@ -3,14 +3,18 @@ import '../App.css';
 import SideBar from './SideBar';
 import Trends from './Trends';
 import Twittes from './Twittes';
+import CreateTweetModal from './CreateTweetModal';
 
 function Home() {
   return (
-    <div className="twitter">
-      <SideBar />
-      <Twittes />
-      <Trends />
-    </div>
+    <>
+      <CreateTweetModal />
+      <div className="twitter">
+        <SideBar />
+        <Twittes />
+        <Trends />
+      </div>
+    </>
   );
 }
 

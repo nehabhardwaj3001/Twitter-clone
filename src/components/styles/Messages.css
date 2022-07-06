@@ -1,0 +1,41 @@
+.inbox {
+
+}
+
+.messages{
+    width: 30%;
+    margin-left: 25%;
+    border-right: 1px solid #e6ecf0;
+}
+
+.part-one {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.part-one h1{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.ic {
+    font-size: 18px;
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+.ic-b {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.part-two {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}

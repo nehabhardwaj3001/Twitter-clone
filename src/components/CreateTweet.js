@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaRegImage, FaRegListAlt, FaRegSmile, FaRegCalendarCheck } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { addTweets } from '../redux/actions/PostAction';
+import { addTweets, closeModal } from '../redux/actions/PostAction';
 
 const CreateTweet = () => {
 
@@ -12,6 +12,7 @@ const CreateTweet = () => {
 	const handleFileChange = (e) => {setTweet({...tweet, [e.target.name]:e.target.value})}
 	const handleClick = () => {
 		dispatch(addTweets(tweet))
+		dispatch(closeModal())
 	}
 
 	return (
