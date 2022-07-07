@@ -1,11 +1,21 @@
 .inbox {
-
+    display: flex;
+    flex-direction: row;
+    border-right: 1px solid #e6ecf0;
 }
 
-.messages{
-    width: 30%;
-    margin-left: 25%;
+.vl {
     border-right: 1px solid #e6ecf0;
+    height: 600px;
+}
+
+  
+.messages{
+    width: 65%;
+    margin-left: 25%;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .part-one {
@@ -34,8 +44,57 @@
 }
 
 .part-two {
-    text-align: center;
+    text-align:left;
     margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.part-two p {
+    color: #536471;
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.part-two button {
+    text-decoration: none;
+    padding: 17px 35px;
+    background: #1da1f2;
+    color: #fff;
+    border-radius: 50px;
+    margin: 35px 2px;
+    outline: none;
+    display: block;
+    text-align: center;
+    border: none;
+    /* width: 60%; */
+    font-size: 16px;
+}
+
+.part-three {
+    text-align:left;
+    margin-top: 200px;
+    margin-left: 110px;
+    margin-right: 35px;
+}
+
+.part-three p {
+    color: #536471;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.part-three button {
+    text-decoration: none;
+    padding: 17px 35px;
+    background: #1da1f2;
+    color: #fff;
+    border-radius: 50px;
+    margin: 35px 2px;
+    outline: none;
+    display: block;
+    text-align: center;
+    border: none;
+    /* width: 60%; */
+    font-size: 16px;
 }

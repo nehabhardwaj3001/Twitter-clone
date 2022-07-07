@@ -26,7 +26,7 @@ const SideBar = () => {
 				<li> <Link to='/explore'> <FaHashtag className='icons' /> Explore </Link> </li>
 				<li> <Link to='/notifications'> <FaRegBell className='icons' /> Notifications </Link> </li>
 				<li> <Link to='/messages'> <FaRegEnvelope className='icons' /> Messages </Link> </li>
-				<li> <Link to='/lists'> <FaClipboardList className='icons' /> Lists </Link> </li>
+				{/* <li> <Link to='/lists'> <FaClipboardList className='icons' /> Lists </Link> </li> */}
 				<li> <Link to='/profile'> <FaUserAlt className='icons' /> Profile </Link> </li>
 				<li> <Link to='/more'> <FaMehBlank className='icons' /> More </Link> </li>
 				<div className='sidebar-btn'>

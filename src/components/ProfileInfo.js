@@ -10,11 +10,11 @@ const ProfileInfo = () => {
             Neha Sharma
         </div>
         <div className='info'>
-            <div className='profile-photo'>
-              <img src='/images/image.jpeg'/>
-              <button>Edit Profile</button>
-            </div>
-            <div></div>
+          <div className='profile-photo'>
+            <img src='/images/image.jpeg'/>
+            <button>Edit Profile</button>
+          </div>
+          <div></div>
         </div>
         <div className='profile-data'>
           <h1>Neha Sharma</h1>

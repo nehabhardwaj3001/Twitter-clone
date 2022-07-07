@@ -6,19 +6,20 @@ import Profile from './components/Profile';
 import Messages from './components/Messages';
 import Notifications from './components/Notifications';
 import Lists from './components/Lists';
-import More from './components/More';
+import Explore from './components/Explore';
 
 function App() {
   return (
     <div className="app">
       <Router>
         <Routes>
+        <Route  path='/' element= {<Home />}></Route>
         <Route  path='/home' element= {<Home />}></Route>
-        <Route path='/explore' element= {<Home />}></Route>
+        <Route path='/explore' element= {<Explore />}></Route>
         <Route path='/notifications' element= {<Notifications />}></Route>
         <Route path='/messages' element= {<Messages />}></Route>
         <Route path='/lists' element= {<Lists />}></Route>
-        <Route path='/more' element= {<More />}></Route>
+        <Route path='/more' element= {<Home />}></Route>
         <Route path='/profile' element= {<Profile />}></Route>
 
         </Routes>
