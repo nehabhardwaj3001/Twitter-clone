@@ -1,0 +1,63 @@
+.ant-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  padding: 30px;
+  width: 100%;
+}
+
+form h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form .form-group {
+  margin-bottom: 20px;
+}
+
+form .form-group label {
+  display: block;
+  text-align: left;
+}
+
+form .form-group input {
+  display: block;
+  width: 90%;
+  height: 40px;
+  margin: 5px 5px;
+  border-radius: 2px;
+  padding: 10px 10px;
+  margin-bottom: 0.5px;
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #1da1f2;
+  transition: transform 0.2s;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 23px;
+  border: none;
+  width: 214px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.twitte {
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 auto;
+}

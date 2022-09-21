@@ -98,3 +98,44 @@
     /* width: 60%; */
     font-size: 16px;
 }
+
+.ant-modal-footer {
+    height: 300px;
+}
+
+.ant-modal {
+    border-radius: 16px;
+}
+
+h2 {
+    margin-bottom: 0 !important;
+    line-height: 24px;
+    font-size: 20px;
+    color: rgb(15, 20, 25) !important;
+    font-weight: 700 !important;
+}
+
+.next-btn {
+    background-color: rgb(15, 20, 25);
+    border-color: rgba(0, 0, 0, 0);
+    opacity: 0.5;
+    min-height: fit-content;
+    border-radius: 100px;
+    min-width: 32px;
+    color: white;
+    padding: 3px 15px;
+    margin-right: 20px;
+}
+
+.data {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: -12px;
+    margin-top: 12px;
+    border: none;
+}
+
+input[type='text'], input[type='password'], input[type='number'], textarea:hover {
+    background: border-box;
+}

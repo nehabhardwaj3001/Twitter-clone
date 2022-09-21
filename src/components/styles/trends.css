@@ -1,0 +1,22 @@
+.data-sroll {
+  overflow-y: scroll;
+  height: 75vh;
+  padding-bottom: 100px;
+}
+
+.data-sroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.data-sroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.data-sroll::-webkit-scrollbar-thumb {
+  background: #f5f4f2;
+  border-radius: 10px;
+}
+
+.data-sroll::-webkit-scrollbar-thumb:hover {
+  background: #673ab7;
+}

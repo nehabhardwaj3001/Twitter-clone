@@ -7,13 +7,18 @@ import Messages from './components/Messages';
 import Notifications from './components/Notifications';
 import Lists from './components/Lists';
 import Explore from './components/Explore';
+import 'antd/dist/antd.css'
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
     <div className="app">
       <Router>
         <Routes>
-        <Route  path='/' element= {<Home />}></Route>
+        <Route  path='/' element= {<Login />}></Route>
+        <Route  path='/login' element= {<Login />}></Route>
+        <Route  path='/signup' element= {<SignUp />}></Route>
         <Route  path='/home' element= {<Home />}></Route>
         <Route path='/explore' element= {<Explore />}></Route>
         <Route path='/notifications' element= {<Notifications />}></Route>
@@ -21,7 +26,6 @@ function App() {
         <Route path='/lists' element= {<Lists />}></Route>
         <Route path='/more' element= {<Home />}></Route>
         <Route path='/profile' element= {<Profile />}></Route>
-
         </Routes>
       </Router>
     </div>

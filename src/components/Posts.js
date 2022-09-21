@@ -6,7 +6,7 @@ import { dltTweet, openComments } from '../redux/actions/PostAction';
 
 const Posts = ({ item, name, username, msg, image, comment, retweet, heart, share}) => {
 	const  dispatch = useDispatch() ;
-console.log("item",msg.tweet)
+
 	return (
 		<div className='post'>
 			<div className='posts-first'>
