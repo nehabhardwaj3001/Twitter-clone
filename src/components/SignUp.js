@@ -30,17 +30,17 @@ const SignUp = () => {
       setSubmitForm(true);
       localStorage.setItem("details", JSON.stringify(details));
       axios
-        .post("http://localhost:5000/signup", {
-          fname: "details.firstname",
-          lname: "details.lastname",
-          email: "emai.email",
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log("error from client side", error);
-        });
+      .post("http://localhost:5000/signup", {
+        fname: "details.firstname",
+        lname: "details.lastname",
+        email: "emai.email",
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log("error from client side", error);
+      });
     }
   };
 
