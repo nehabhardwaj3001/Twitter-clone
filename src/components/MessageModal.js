@@ -5,15 +5,12 @@ import '../components/styles/Messages.css';
 
 const MessageModal = ({ isModalOpen, setIsModalOpen }) => {
 	
-  console.log("+++++++++++++++++", isModalOpen);
-
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
   return (
     <Modal
-      className="msg-modal"
       open={isModalOpen}
       onCancel={handleCancel}
       cancelButtonProps={{ style: { display: "none" } }}

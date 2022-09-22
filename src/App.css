@@ -35,6 +35,16 @@ body {
   background-color: #fff;
 }
 
+.twt {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  user-select: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  margin-bottom: 100px;
+}
+
 /* createTWeeet */
 .create {
   padding-top: 70px;

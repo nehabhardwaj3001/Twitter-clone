@@ -9,6 +9,7 @@ import {
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { dltTweet, openComments } from "../redux/actions/PostAction";
+import CommentModal from "./CommentModal";
 
 const Posts = ({
   item,
@@ -21,8 +22,14 @@ const Posts = ({
   heart,
   share,
 }) => {
+  const [openModal, setOpenModal] = useState(false)
 	const[clicked, setClicked] = useState(false);
   const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(openComments())
+    setOpenModal(true)
+  }
 
   return (
     <div className="post">
@@ -54,7 +61,7 @@ const Posts = ({
           <span>
             <FaComment
               className="comment"
-              onClick={() => dispatch(openComments())}
+              onClick={handleClick}
             />
             {comment}
           </span>
@@ -69,6 +76,7 @@ const Posts = ({
           </span>
         </div>
       </div>
+      {openModal && (<CommentModal openModal={openModal} setOpenModal={setOpenModal} />)}
     </div>
   );
 };
