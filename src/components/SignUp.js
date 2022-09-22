@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "antd";
 import { FaTwitter } from "react-icons/fa";
 import "../components/styles/SignIn.css";
+import axios from "axios";
 
 const SignUp = () => {
   const [details, setDetails] = useState({
@@ -10,9 +11,28 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+  const [submitForm, setSubmitForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
+
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const handleSubmit = () => {
+    axios
+      .post(``, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        },
+        {
+          fname: details.firstname,
+          lname: details.lastname,
+          email: details.email,
+        }
+      )
+      .then((res) => {
+
+      });
+      setSubmitForm(true)
   };
 
   return (
@@ -26,6 +46,7 @@ const SignUp = () => {
       <FaTwitter className="icons logo twi twitte" />
       <h1 className="heading">Join Twitter today</h1>
       <form>
+        {submitForm && <p>Registered Successfully!!!</p>}
         <div className="form-group">
           <label htmlFor="firstName">First Name :</label>
           <input
@@ -68,7 +89,15 @@ const SignUp = () => {
             value={details.password}
           />
         </div>
-        <button className="btn" type='submit' variant='contained' color='primary' >Sign Up</button>
+        <button
+          className="btn"
+          type="submit"
+          variant="contained"
+          color="primary"
+          onClick={handleSubmit}
+        >
+          Sign Up
+        </button>
       </form>
     </Modal>
   );

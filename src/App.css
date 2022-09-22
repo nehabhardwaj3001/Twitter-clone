@@ -210,6 +210,10 @@ body {
   align-items: center;
 }
 
+.liked {
+  color: red;
+}
+
 /* trends */
 .trends {
   width: 25%;

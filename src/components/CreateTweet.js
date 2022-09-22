@@ -66,8 +66,6 @@ const CreateTweet = () => {
           />
         </div>
         <div className="create-icons">
-          {/* <button onClick={() => setClicked(true)}><FaRegImage className="icon"/></button> */}
-
           <FaRegListAlt className="icon" />
           <FaRegSmile className="icon" />
           <FaRegCalendarCheck className="icon" />
@@ -76,7 +74,6 @@ const CreateTweet = () => {
           <button onClick={handleClick}>Tweet</button>
         </div>
       </div>
-      {/* {clicked && (<FileUploader handleChange={handleFileChange} name="file" types={fileTypes} />)} */}
     </div>
   );
 };
