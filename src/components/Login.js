@@ -13,7 +13,7 @@ const Login = () => {
   });
   const [submitForm, setSubmitForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
-  // const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
 
