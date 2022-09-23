@@ -13,7 +13,7 @@ const Login = () => {
   });
   const [submitForm, setSubmitForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [formErrors, setFormErrors] = useState({});
+  // const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
 
@@ -21,24 +21,23 @@ const Login = () => {
     setIsModalOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormErrors(validate(details));
-    // setSubmitForm(!submitForm);
-    if (Object.keys(formErrors).length === 0 && submitForm) {
+    const err = await validate(details)
+    if (Object.keys(formErrors).length === 0 ) {
       setSubmitForm(true);
-    // axios
-    //   .post(
-    //     ``,
-    //     {
-    //       headers: { "Access-Control-Allow-Origin": "*" },
-    //     },
-    //     {
-    //       email: details.email,
-    //       pswd: details.password,
-    //     }
-    //   )
-    //   .then((res) => {});
+    axios
+      .post(
+        ``,
+        {
+          email: details.email,
+          pswd: details.password,
+        }
+      )
+      .then((res) => {console.log(response);})
+      .catch((error) => {
+        console.log("error from client side", error);
+      });
     }
   };
 

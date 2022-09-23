@@ -16,7 +16,6 @@ const SignUp = () => {
   const [submitForm, setSubmitForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
   // const [formErrors, setFormErrors] = useState({});
-  const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
   const handleCancel = () => {
@@ -26,10 +25,10 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-     const err=await validate(details)
+     const err = await validate(details)
       if(Object.keys(err).length === 0){
         setSubmitForm(true);
-           axios
+      axios
       .post("http://localhost:5000/signup", {
         fname: "details.firstname",
         lname: "details.lastname",
@@ -89,7 +88,6 @@ const SignUp = () => {
       errors.password = "Password cannot exceed more than 10 characters";
     }
     console.log("errors", errors);
-  //  setFormErrors(errors);
     return errors;
   };
   // const validate = (values) => {
