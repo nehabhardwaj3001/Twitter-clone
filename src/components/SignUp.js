@@ -15,24 +15,21 @@ const SignUp = () => {
   });
   const [submitForm, setSubmitForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
+  // const [formErrors, setFormErrors] = useState({});
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  console.log("formErrors", formErrors)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormErrors(validate(details));
-    console.log("formErrors", formErrors)
-    // setSubmitForm(!submitForm);
-    console.log("Object.keys(formErrors).length", Object.keys(formErrors).length)
-    if (Object.keys(formErrors).length === 4 ) {
-      setSubmitForm(true);
-      console.log("submitForm", submitForm)
-      // localStorage.setItem("details", JSON.stringify(details));
-      axios
+     const err=await validate(details)
+      if(Object.keys(err).length === 0){
+        setSubmitForm(true);
+           axios
       .post("http://localhost:5000/signup", {
         fname: "details.firstname",
         lname: "details.lastname",
@@ -44,12 +41,38 @@ const SignUp = () => {
       .catch((error) => {
         console.log("error from client side", error);
       });
-    }
+        console.log("hiiiii===>",formErrors)
+      }else{
+        console.log("submit successfully",details)
+      }
+  // console.log("detiails===>",details)
+    // setFormErrors(validate(details));
+    // setSubmitForm(!submitForm);
+    // console.log("Object.keys(formErrors).length", Object.keys(formErrors).length)
+    // if (Object.keys(formErrors).length === 0 ) {
+    //   setSubmitForm(true);
+    //   console.log("submitForm", submitForm)
+    //   // localStorage.setItem("details", JSON.stringify(details));
+    //   axios
+    //   .post("http://localhost:5000/signup", {
+    //     fname: "details.firstname",
+    //     lname: "details.lastname",
+    //     email: "emai.email",
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log("error from client side", error);
+    //   });
+    // }
+    // console.log("sffsf", formErrors)
   };
 
   const validate = (values) => {
+    console.log("I am valuues===>",values)
     const errors = {};
-    if (!values.firstname) {
+    if (!values?.firstname) {
       errors.firstname = "First Name is required!";
     }
     if (!values.lastname) {
@@ -60,15 +83,38 @@ const SignUp = () => {
     }
     if (values.password.length === 0) {
       errors.password = "Password is required";
-    } else if (values.password.length < 4) {
+    } else if (values.password.length < 4 ) {
       errors.password = "Password must be more than 4 characters";
     } else if (values.password.length > 10) {
       errors.password = "Password cannot exceed more than 10 characters";
     }
     console.log("errors", errors);
+  //  setFormErrors(errors);
     return errors;
   };
-console.log("submitForm", submitForm)
+  // const validate = (values) => {
+  //   console.log("I am valuues===>",values)
+  //   const errors = {};
+  //   if (!values?.firstname) {
+  //     errors.firstname = "First Name is required!";
+  //   }
+  //   if (!values.lastname) {
+  //     errors.lastname = "Last Name is required!";
+  //   }
+  //   if (!values.email) {
+  //     errors.email = "Email is required!";
+  //   }
+  //   if (values.password.length === 0) {
+  //     errors.password = "Password is required";
+  //   } else if (values.password.length < 4) {
+  //     errors.password = "Password must be more than 4 characters";
+  //   } else if (values.password.length > 10) {
+  //     errors.password = "Password cannot exceed more than 10 characters";
+  //   }
+  //   console.log("errors", errors);
+  //   return errors;
+  // };
+
   return (
     <Modal
       open={isModalOpen}
@@ -100,7 +146,7 @@ console.log("submitForm", submitForm)
             value={details.firstname}
           />
         </div>
-        <p className="error"> {formErrors.firstname} </p>
+        <p className="error"> {formErrors?.firstname} </p>
         <div className="form-group">
           <label htmlFor="lastName">Last Name :</label>
           <input
@@ -112,7 +158,7 @@ console.log("submitForm", submitForm)
             value={details.lastname}
           />
         </div>
-        <p className="error"> {formErrors.lastname} </p>
+        <p className="error"> {formErrors?.lastname} </p>
         <div className="form-group">
           <label htmlFor="email">Email :</label>
           <input
@@ -122,7 +168,7 @@ console.log("submitForm", submitForm)
             value={details.email}
           />
         </div>
-        <p className="error"> {formErrors.email} </p>
+        <p className="error"> {formErrors?.email} </p>
         <div className="form-group">
           <label htmlFor="password">Password :</label>
           <input
@@ -134,7 +180,7 @@ console.log("submitForm", submitForm)
             value={details.password}
           />
         </div>
-        <p className="error"> {formErrors.password} </p>
+        <p className="error"> {formErrors?.password} </p>
         <button className="btn" type="submit">
           Sign Up
         </button>
