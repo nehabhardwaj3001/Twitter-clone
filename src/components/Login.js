@@ -16,28 +16,26 @@ const Login = () => {
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
-
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const err = await validate(details)
-    if (Object.keys(formErrors).length === 0 ) {
+    const err = await validate(details);
+    if (Object.keys(formErrors).length === 0) {
       setSubmitForm(true);
-    axios
-      .post(
-        ``,
-        {
+      axios
+        .post(``, {
           email: details.email,
           pswd: details.password,
-        }
-      )
-      .then((res) => {console.log(response);})
-      .catch((error) => {
-        console.log("error from client side", error);
-      });
+        })
+        .then((res) => {
+          // console.log(response);
+        })
+        .catch((error) => {
+          console.log("error from client side", error);
+        });
     }
   };
 
@@ -53,7 +51,7 @@ const Login = () => {
     } else if (values.password.length > 10) {
       errors.password = "Password cannot exceed more than 10 characters";
     }
-    console.log("errors", errors)
+    console.log("errors", errors);
     return errors;
   };
 
@@ -70,44 +68,44 @@ const Login = () => {
       {submitForm && (
         <div className="success">
           <h1>Logged In Successfully!!!</h1>
-          <button className="btn" onClick={() => navigate("/home")}>OK</button>
+          <button className="btn" onClick={() => navigate("/home")}>
+            OK
+          </button>
         </div>
       )}
       {/* {!submitForm && ( */}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email :</label>
-            <input
-              type="email"
-              id="email"
-              onChange={(e) =>
-                setDetails({ ...details, email: e.target.value })
-              }
-              value={details.email}
-            />
-          </div>
-          <p className='error'> {formErrors.email} </p>
-          <div className="form-group">
-            <label htmlFor="password">Password :</label>
-            <input
-              type="password"
-              id="password"
-              onChange={(e) =>
-                setDetails({ ...details, password: e.target.value })
-              }
-              value={details.password}
-            />
-          </div>
-          <p className='error'> {formErrors.password} </p>
-          <div>
-            <button className="btn" type="submit">
-              Sign In
-            </button>
-            <p className="change">
-              Don’t have an account?<Link to="/signup">Sign up</Link>
-            </p>
-          </div>
-        </form>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="email">Email :</label>
+          <input
+            type="email"
+            id="email"
+            onChange={(e) => setDetails({ ...details, email: e.target.value })}
+            value={details.email}
+          />
+        </div>
+        <p className="error"> {formErrors.email} </p>
+        <div className="form-group">
+          <label htmlFor="password">Password :</label>
+          <input
+            type="password"
+            id="password"
+            onChange={(e) =>
+              setDetails({ ...details, password: e.target.value })
+            }
+            value={details.password}
+          />
+        </div>
+        <p className="error"> {formErrors.password} </p>
+        <div>
+          <button className="btn" type="submit">
+            Sign In
+          </button>
+          <p className="change">
+            Don’t have an account?<Link to="/signup">Sign up</Link>
+          </p>
+        </div>
+      </form>
       {/* )} */}
     </Modal>
   );
