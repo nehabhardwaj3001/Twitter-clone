@@ -25,10 +25,13 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(details));
+    console.log("formErrors", formErrors)
     // setSubmitForm(!submitForm);
-    if (Object.keys(formErrors).length === 0 && submitForm) {
+    console.log("Object.keys(formErrors).length", Object.keys(formErrors).length)
+    if (Object.keys(formErrors).length === 4 ) {
       setSubmitForm(true);
-      localStorage.setItem("details", JSON.stringify(details));
+      console.log("submitForm", submitForm)
+      // localStorage.setItem("details", JSON.stringify(details));
       axios
       .post("http://localhost:5000/signup", {
         fname: "details.firstname",
@@ -65,7 +68,7 @@ const SignUp = () => {
     console.log("errors", errors);
     return errors;
   };
-
+console.log("submitForm", submitForm)
   return (
     <Modal
       open={isModalOpen}
